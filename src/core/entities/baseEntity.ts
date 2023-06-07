@@ -6,8 +6,8 @@ export class BaseEntity<Props> {
     get id () {
         return this._id
     }
-     constructor(props: Props, id?: string) {
+    protected constructor(props: Props, id?: UniqueIdentifier) {
         this.props = props
-        this._id = new UniqueIdentifier(id)
+        this._id = id ?? new UniqueIdentifier()
      }
 }
